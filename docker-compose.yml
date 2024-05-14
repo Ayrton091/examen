@@ -1,0 +1,29 @@
+services:
+  auth_api:
+    build:
+      context: ./auth_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: auth_api
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+  
+  inventory_api:
+    build:
+      context: ./inventory_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: inventory_api
+    restart: unless-stopped
+    ports:
+      - "81:8080"
+  orders_api:
+    build:
+      context: ./orders_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: orders_api
+    restart: unless-stopped
+    ports:
+      - "82:8080"
